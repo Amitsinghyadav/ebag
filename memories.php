@@ -94,7 +94,8 @@
                
     <?php
       //display
-        $res=mysqli_query($con,"Select * from imgid");
+        $email=$_SESSION['email'];
+        $res=mysqli_query($con,"Select * from imgid Where email='$email'");
         while($row=mysqli_fetch_array($res)){
             echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="250" height="250">';
         }

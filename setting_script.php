@@ -13,14 +13,16 @@
       $repassword=md5($repassword);
 
        $email=$_SESSION['email'];
-       $que="SELECT password,id from users where email='$email'";
+       $que="SELECT * from users where email='$email'";
        $res=mysqli_query($con,$que)or die($mysqli_error($con));
        $row=mysqli_fetch_array($res);
        $orig_pass=$row['password'];
        
   
   if($newpassword==$repassword)
-   { 
+   {    if($oldpassword==$orig_pass)
+        {
+       
         $cquery="UPDATE users SET password = '$newpassword' WHERE users.email = '$email'";
         $result=mysqli_query($con,$cquery)or die($mysqli_error($con));
         if($result==true)
@@ -28,7 +30,13 @@
             $updated="Your password is updated.";
             header('location:setting.php?updated='.$updated);
         }
-   
+        }
+    else
+     {
+        $error_password="Your Old Password is wrong!!";
+        header('location:setting.php?error_password='.$error_password);
+     }
+
 
    }
  else{

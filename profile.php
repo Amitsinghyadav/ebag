@@ -55,7 +55,7 @@ $total_rows_fetched=mysqli_num_rows($select_query_result);
     
     <div class="row">
     <div class="col-xs-1">Phone:</div>
-    <div class="col-xs-11"><?php echo $row['email'] ?></div>
+    <div class="col-xs-11"><?php echo $row['phone'] ?></div>
     </div>
     
     <div class="row">
