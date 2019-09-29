@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
    require('includes/common.php');
    $email = $_POST['email'];
    $regex_email = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/";   //valitadions for email

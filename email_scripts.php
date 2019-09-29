@@ -1,4 +1,5 @@
 <?php
+   error_reporting(E_ERROR | E_PARSE);
    require('includes/common.php');
  $error="";
    $email = $_POST['email'];
