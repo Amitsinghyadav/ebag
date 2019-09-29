@@ -3,6 +3,10 @@
     if (!isset($_SESSION['email']))
        { header('location: homepage.php'); 
        }
+      
+      $oldpassword = $_POST['oldpassword'];
+      $oldpassword = mysqli_real_escape_string($con, $oldpassword);
+      $oldpassword=md5($oldpassword);
 
       $newpassword = $_POST['newpassword'];
       $newpassword = mysqli_real_escape_string($con, $newpassword);
